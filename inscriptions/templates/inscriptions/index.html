@@ -1,0 +1,39 @@
+{% extends 'inscriptions/base.html' %}
+{% block content %}
+  <h1>Inscription d'un nouveau membre</h1>
+
+  <p>
+  <form class="" action="{% url 'inscriptions:validation' %}" method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th><label for="sciper">Sciper:</label></th>
+            <th><input type="number" id="sciper" name="sciper"></th>
+        </tr>
+        <tr>
+            <th><label for="phone_number">Numéro tél.:</label></th>
+            <th><input type="text" id="phone_number" name="phone_number"></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+                <input type="hidden" name="sciper_is_known" value="1">
+                <input type="submit" value="Rechercher">
+            </th>
+        </tr>
+    </table>
+   
+    
+    
+  </form>
+  </p>
+  <p>
+  <form class="" action="{% url 'inscriptions:validation' %}" method="post">
+    {% csrf_token %}
+    <label for="phone_number">Numéro tél.:</label>
+    <input type="text" id="phone_number" name="phone_number">
+    <input type="hidden" name="sciper_is_known" value="0">
+    <input type="submit" value="Sans sciper">
+  </form>
+  </p>
+{% endblock %}

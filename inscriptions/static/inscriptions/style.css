@@ -1,0 +1,96 @@
+@font-face
+{
+  font-family: roboto;
+  src: url('roboto.ttf');
+}
+body
+{
+  font-family: roboto;
+  background-color: #e6e6e6;
+  margin: 2%;
+}
+h1
+{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+  color: white;
+  text-align: center;
+  background-color: #ff4901;
+  border-radius: 5px 5px;
+}
+label
+{
+  font-size: 1.5em;
+}
+.section_information
+{
+  margin-bottom: 0.5em;
+}
+input, button
+{
+  font-size: 1.5em;
+}
+form
+{
+  border: 2px solid;
+  border-color: #330e00;
+  border-radius: 15px 15px;
+  padding: 1em;
+}
+input[type=submit], button
+{
+  color: white;
+  background-color: #ff4901;
+  transition: background-color 0.3s;
+
+  border: none;
+  border-radius: 5px 10px;
+  padding: 0.5em 40px;
+  margin-left: 5px;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+input[type=submit]:hover, button:hover
+{
+  background-color: #ffb699;
+}
+input[type=text], input[type=number]
+{
+  border: 2px solid;
+  border-color: #330e00;
+  border-radius: 30px, 30px;
+}
+input[readonly]:hover
+{
+  cursor: not-allowed;
+}
+.reussi, .echec
+{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  font-size: 3em;
+  border-radius: 20px 20px;
+}
+.reussi
+{
+  background-color: #00cc44;
+}
+.echec
+{
+  background-color: red;
+}
+.robopoly_logo
+{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+.new_inscription
+{
+  margin-top: 2em;
+}

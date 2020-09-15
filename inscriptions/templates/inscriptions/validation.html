@@ -1,0 +1,64 @@
+{% extends 'inscriptions/base.html' %}
+{% block content %}
+  {% if sciper_is_known != 2 and sciper_is_known != 1 and sciper_is_known != 0 %}
+    Accès incorrect à cette page
+  {% else %}
+    {% if sciper_is_known == 2 %}
+      Erreur de sciper
+    {% else %}
+      {% if sciper_is_known == 1 %}
+        <h1>Vérification des données d'inscriptions</h1>
+      {% else %}
+        <h1>Entrée manuelle des données d'inscriptions</h1>
+      {% endif %}
+
+      <form action="{% url 'inscriptions:save' %}" method="post">
+        {% csrf_token %}
+        <div class="section_information">
+          <label for="sciper">Sciper</label><br>
+          {% if sciper_is_known == 1 %}
+            <input type="text" name="sciper" id="sciper" value="{{sciper}}" readonly="readonly" readonly><br>
+          {% else %}
+            <input type="text" name="sciper" id="sciper" value="0"><br>
+          {% endif %}
+        </div>
+
+        <div class="section_information">
+          <label for="first_name">Prénoms</label><br>
+          <input type="text" name="first_name" id="first_name" value="{% if sciper_is_known == 1 %}{{first_name}}{% endif %}" placeholder="Non renseigné"><br>
+        </div>
+
+        <div class="section_information">
+          <label for="name">Nom</label><br>
+          <input type="text" name="name" id="name" value="{% if sciper_is_known == 1 %}{{name}}{% endif %}" placeholder="Non renseigné"><br>
+        </div>
+
+        <div class="section_information">
+          <label for="mail">Adresse e-mail</label><br>
+          <input type="text" name="mail" id="mail" value="{% if sciper_is_known == 1 %}{{mail}}{% endif %}" placeholder="Non renseigné"><br>
+        </div>
+        
+        <div class="section_information">
+          <label for="phone_number">Numéro tél.</label><br>
+          <input type="text" name="phone_number" id="phone_number" value="{% if sciper_is_known == 1 %}{{phone_number}}{% endif %}" placeholder="Non renseigné"><br>
+        </div>
+
+        <div class="section_information">
+          <label for="title">Titre</label><br>
+          <input type="radio" id="female" name="gender" value="Madame" {% if sciper_is_known != 1 or gender == 'F' %} checked {% endif %}>
+          <label for="female">Madame</label><br>
+          <input type="radio" id="male" name="gender" value="Monsieur" {% if sciper_is_known == 1 and gender == 'M' %} checked {% endif %}>
+          <label for="male">Monsieur</label><br>
+        </div>
+
+        <div class="section_information">
+          <label for="section">Section</label><br>
+          <input type="text" name="section" id="section" value="{% if sciper_is_known == 1 %}{{section}}{% endif %}" placeholder="Non renseigné"><br>
+          <br>
+        </div>
+
+        <input type="submit" value="Inscrire">
+      </form>
+    {% endif %}
+  {% endif %}
+{% endblock %}
