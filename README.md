@@ -7,4 +7,17 @@ En principe, cette apllication sera accessible de manière qui devrait ressemble
 
 L'aperçu des membres inscrits se fait par l'interface admin déjà fournie par django. Ce serait bien si vous pouriez la restituez comme telle car la personne en charge des paiements des cotisations l'utilisera pour donner par la suite les accès à notre local et à nos services.
 
+N'oubliez pas de changer le mot de passe de la page admin et d'activez la production !
+Particulièrement dans le settings qui est pour le moment:
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'rxnsj811!6h9ti72i-my(vl#uqxps@l$67vi5qo2s+*2jm7of5'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True            # not in production !
+ALLOWED_HOSTS = ['*']   # not in production !
+# SECURITY WARNING !!!
+
+# ALLOWED_HOSTS = []    # default configuration for ALLOWED_HOSTS
+
 Bon travail, bonne chance et bon courage
