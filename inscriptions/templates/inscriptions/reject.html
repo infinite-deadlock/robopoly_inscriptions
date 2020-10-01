@@ -1,0 +1,13 @@
+{% extends 'inscriptions/base_inscription.html' %}
+{% block content %}
+  <p>
+    Seuls les membres du comité Robopoly peuvent effectuer des inscriptions, et ce
+    uniquement après l'octroi de droits spéciaux sur la présente application.<br />
+    Si vous avez tel accès, vous pouvez vous connecter sans autre.
+  </p>
+  <p>
+    <button onclick="location.href='{% url 'login'%}';">
+      Se connecter
+    </button>
+  </p>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>Robopoly</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'inscriptions/style.css' %}">
+  </head>
+
+  <body>
+    {% block content %}
+    {% endblock %}
+    
+    {% if not_connected_for_sure != 1 %}
+    <footer>
+      <button onclick="location.href='{% url 'logout'%}';">
+        Se déconnecter
+      </button>
+    </footer>
+    {% endif %}
+  </body>
+</html>

@@ -5,5 +5,6 @@ app_name = 'inscriptions'
 urlpatterns = [
     path('', views.index, name='index'),
     path('validation/', views.validation, name='validation'),
-    path('save/', views.save, name='save')
+    path('save/', views.save, name='save'),
+    path('reject/', views.reject, name='reject')
 ]

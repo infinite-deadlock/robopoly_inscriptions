@@ -1,4 +1,4 @@
-{% extends 'inscriptions/base.html' %}
+{% extends 'inscriptions/base_inscription.html' %}
 {% block content %}
   {% if inscription_status == 1 %}
     <div class="reussi">
@@ -11,6 +11,16 @@
       L'inscription n'a pas pu se faire en raison d'un problème :'-(<br>
       Erreur: {{ descr_error }}
     </div>
+  {% endif %}
+  {% if mail_sending == 1 %}
+     <p class="mail_success">
+         Un mail de bienvenue a été envoyé !
+     </p>
+  {% else %}
+     <p class="mail_fail">
+         Une erreur est survenue: il n'a pas été possible d'envoyer un mail de bienvenue.<br>
+         Veuillez en envoyer un manuellement.
+     </p>
   {% endif %}
   <form class="new_inscription" action="{% url 'inscriptions:index' %}" method="post">
     {% csrf_token %}

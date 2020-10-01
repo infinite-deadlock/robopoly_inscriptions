@@ -94,13 +94,3 @@ input[readonly]:hover
 {
   margin-top: 2em;
 }
-.mail_success
-{
-  font-weight: bold;
-  color: green;
-}
-.mail_fail
-{
-  font-weight: bold;
-  color: red;
-}

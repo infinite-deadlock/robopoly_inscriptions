@@ -1,0 +1,10 @@
+{% extends 'registration/base_registration.html' %}
+
+{% block content %}
+  <p>Vous êtes désormais déconnecté.</p>  
+  <p>
+    <button onclick="location.href='{% url 'login'%}';">
+      Se reconnecter
+    </button>
+  </p>
+{% endblock %}
